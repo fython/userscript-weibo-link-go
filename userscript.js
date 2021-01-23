@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name 渣浪微博外链自动跳转
 // @namespace https://github.com/fython
-// @version 0.1
+// @version 0.2
 // @description 渣浪微博外链（t.cn）自动跳转
 // @author Siubeng (fython)
 // @match *://t.cn/*
@@ -21,7 +21,7 @@
         return true;
     }
 
-    const link = document.querySelector(".link").innerText;
+    const link = document.querySelector("a[href]").href;
     if (isValidUrl(link)) {
         window.location.href = link;
     }
